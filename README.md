@@ -5,3 +5,4 @@ in this file.
 
 Test 1
 another test
+Test 2
