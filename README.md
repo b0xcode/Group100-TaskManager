@@ -7,3 +7,4 @@ Test 1
 another test
 Test 2
 test1
+conflict
