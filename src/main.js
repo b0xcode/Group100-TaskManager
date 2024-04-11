@@ -1,4 +1,4 @@
-import {LitElement, html, css} from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
+import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
 import './components/widget-block.js';
 import './components/blog-block.js';
 import './components/widget-container.js';
@@ -11,33 +11,69 @@ import './components/task-manager.js';
  */
 class Comp2110TaskManager extends LitElement {
   static properties = {
-    header: {type: String},
+    header: { type: String },
   };
 
   static styles = css`
     :host {
       min-height: 100vh;   
-      font-size: 14pt;
+      font-size: 12pt;
       color: #1a2b42;
       max-width: 960px;
       margin: 0 auto;
-      text-align: center;
-      background-color: var(--comp2110-portal-background-color);
+      
     }
 
     main {
       display: flex;
       justify-content: space-between;
+      display: -webkit-flex;
+      flex-direction: row;
+      margin-top: 100px;
+      padding-left: 30px;
     }
+
+    header {
+      display: flex;
+      display: -webkit-flex;
+      flex-direction: row;
+      justify-content: space-around;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      align-items: center;
+      background: radial-gradient(ellipse at top, rgba(5, 20, 24, 0.62), rgba(63, 67, 107, 0.62));
+      backdrop-filter: blur(5px);
+      box-shadow: 0px 2px 8px #112d37;
+      z-index: 100;
+    }
+    
+    header>h2 {
+      flex-grow: 0.2;
+      padding: 2px;
+      padding-top: 10px;
+      padding-left: 50px;
+      color: #fefffe;
+      font-size: 1.5em;
+      font-family: tahoma;
+      text-shadow: -2px 2px 5px #112d37;
+    }
+
 
     .app-footer {
       font-size: calc(12px + 0.5vmin);
-      align-items: center;
+      padding: 10px;
+      text-align: center;
+      text-shadow: -2px 2px 3px #0b2027;
+      opacity: 0.7;
+      color: #ede3e3;
     }
 
     .app-footer a {
       margin-left: 5px;
     }
+    
   `;
 
   constructor() {
@@ -48,7 +84,7 @@ class Comp2110TaskManager extends LitElement {
   render() {
     return html`
       <header>
-        <h1>${this.header}</h1>
+        <h2>${this.header}</h2>
         <login-widget></login-widget>
       </header>
 

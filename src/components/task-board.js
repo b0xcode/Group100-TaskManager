@@ -1,5 +1,5 @@
-import {LitElement, html, css} from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
-import {TaskModel} from '../models.js';
+import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
+import { TaskModel } from '../models.js';
 import './task-card.js';
 
 /**
@@ -9,24 +9,25 @@ import './task-card.js';
 class TaskBoard extends LitElement {
   static properties = {
     category: {},
-    _tasks: {state: true},
-    _message: {state: true},
+    _tasks: { state: true },
+    _message: { state: true },
   };
 
   static styles = css`
     :host {
-        display: block;
-        background-color: #d0cb65;
-        color: #ffcc33;
-        border: 1px solid red;
-        padding: 10px;
+        background-color: lavender;
         margin: 10px;
+        padding: 15px;
+        padding-top: 5px;
+        border-radius: 5px;
+        box-shadow: -1px 3px 5px #32484f8b;
         width: 250px;
-        height: 80dvh;
+        height:auto;
     }
     :host input {
         width: 5em;
     }
+
     .task-actions {
       display: block;
     }
@@ -59,8 +60,8 @@ class TaskBoard extends LitElement {
 
             <div class="card-list">
               ${this._tasks.map((task) => {
-                  return html`<task-card id=${task.id}></task-card>`;
-                })}
+        return html`<task-card id=${task.id}></task-card>`;
+      })}
             </div>
           </div>
         `;
