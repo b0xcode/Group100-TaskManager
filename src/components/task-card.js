@@ -1,5 +1,5 @@
-import {LitElement, html, css} from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
-import {TaskModel} from '../models.js';
+import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
+import { TaskModel } from '../models.js';
 import './edit-task.js';
 
 /**
@@ -10,23 +10,29 @@ import './edit-task.js';
 class TaskCard extends LitElement {
   static properties = {
     id: 0,
-    _task: {state: true},
+    _task: { state: true },
   };
 
   static styles = css`
     :host {
-        display: block;
-        width: 200px;
-        background-color: #ffffcc;
-        color: #003000;
+        display: inline-block;
+        background-color: #fefffe;
+        padding: 22px;
+        padding-top: 2px;
+        margin-bottom: 7px;
+        border-radius: 3px;
+        box-shadow: 0px 2px #c1b9b9;
     }
     :host input {
         width: 5em;
     }
-    h2 {
-      background-color: red;
-      font-size: large;
-      font-variant: small-caps;
+    .task-timestamp {
+      color: #7f7979;
+      font-size: smaller;
+      font-style: italic;
+    }
+    .task-due {
+     color: #b3124a;
     }
   `;
 
@@ -49,7 +55,7 @@ class TaskCard extends LitElement {
       const due = new Date(parseInt(this._task.due));
       return html`
       <div>
-        <h2>${this._task.summary}</h2>
+        <h4>${this._task.summary}</h4>
         <p class='task-timestamp'>${ts.toDateString()}</p>
         <p class='task-due'>${due.toDateString()}</p>
         <p class='task-content'>${this._task.text}</p>

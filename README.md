@@ -6,7 +6,11 @@ in this file.
 Test 1
 another test
 Test 2
+test1
+conflict
+different test
 
-Test 3
+HEllo my name is 
+
 
 test 4
