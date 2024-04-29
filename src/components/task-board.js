@@ -24,10 +24,17 @@ class TaskBoard extends LitElement {
         width: 250px;
         height:auto;
     }
-    :host input {
-        width: 5em;
+
+    h3{
+      margin-left: 12px;
+      text-shadow: -1px 1px 2px #c1b9b9;
     }
 
+    h3::after {
+      float: right;
+      content: "📌";
+    }
+    
     .task-actions {
       display: block;
     }

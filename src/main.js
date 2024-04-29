@@ -59,7 +59,11 @@ class Comp2110TaskManager extends LitElement {
       font-family: tahoma;
       text-shadow: -2px 2px 5px #112d37;
     }
-
+    
+    header>h2:before {
+      content: "📝";
+    }
+  
 
     .app-footer {
       font-size: calc(12px + 0.5vmin);

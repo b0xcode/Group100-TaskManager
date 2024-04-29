@@ -34,6 +34,13 @@ class TaskCard extends LitElement {
     .task-due {
      color: #b3124a;
     }
+    .task-due:before {
+      content: "⏰";
+      display: inline-block;
+    }
+    :host div{
+      line-height: 0.5em;
+    }
   `;
 
   connectedCallback() {

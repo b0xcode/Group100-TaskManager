@@ -13,6 +13,35 @@ class EditTask extends LitElement {
   };
 
   static styles = css`
+        button{
+          border: none;
+          padding: 7px;
+          padding-left: 20px;
+          padding-right: 20px;
+          border-radius: 3px;
+        }
+
+        #edit-button{
+          color: #fefffe;
+          background-color: #5db02d;
+          box-shadow: 0px 2px #259123;
+          transition: 0.25s;
+        }
+
+        #edit-button:hover{
+          background-color: #259123;
+        }
+        
+        #cancel-button{
+          background: none;
+          color: #7f7979;
+          transition: 0.25s;
+        }
+        
+        #cancel-button:hover{
+          color: #b3124a;
+        }
+
         form {
             display: flex;
             flex-direction: column;
@@ -21,9 +50,12 @@ class EditTask extends LitElement {
             display: grid;
             grid-template-columns: 1fr 3fr;
         }
-        input {
+        input[type="submit"] {
             width: 100%;
-        }
+            border:none;
+            color: #fefffe;
+            background-color: #5db02d;
+          }
       `;
 
   connectedCallback() {
@@ -75,7 +107,7 @@ class EditTask extends LitElement {
     const isoString = new Date(this._task.due).toISOString();
     const due = isoString.substring(0, isoString.indexOf('T') + 6);
     return html`
-        <button @click=${this._showModal}>Edit</button>
+        <button @click=${this._showModal} id="edit-button">Edit</button>
         <dialog id="edit-task-dialog">
             <form @submit="${this._submit}">
                 <div>
@@ -97,7 +129,7 @@ class EditTask extends LitElement {
                     <input name="due" type="datetime-local" value=${due}>
                 </div>
                 <div>
-                    <button @click="${this._hideModal}">Cancel</button>
+                    <button @click="${this._hideModal}" id="cancel-button">Cancel</button>
                     <input value='Update' type=submit>
                 </div>
             </form>
