@@ -135,11 +135,11 @@ class Comp2110TaskManager extends LitElement {
     }
   }
 
-  ToStartGame(playerSelection) {
+  startplaying(playerSelection) {
     const selections = ['rock', 'paper', 'scissors'];
     const systemSelection = selections[Math.floor(Math.random() * selections.length)];
     const resultFeature = this.shadowRoot.getElementById('outcome');
-    const outcome = this.determineWinner(playerSelection, systemSelection);
+    const outcome = this.WinORLoss(playerSelection, systemSelection);
     resultFeature.textContent = `You chose ${playerSelection}. Computer chose ${systemSelection}. ${outcome}`;
   }
 }

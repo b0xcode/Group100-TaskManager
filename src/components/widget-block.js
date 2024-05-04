@@ -16,8 +16,8 @@ class WidgetBlock extends LitElement {
         display: block;
         width: 250px;
         height: 250px;
-        background-color: azure;
-        border: 1px solid black;
+        background-color: lightblue;
+        border: 1px solid red;
     }
   `;
 
@@ -29,8 +29,36 @@ class WidgetBlock extends LitElement {
   render() {
     return html`
         <h3>${this.header}</h3>
-    `;
+        <h3>Rock, Paper, Scissors Game</h3>
+        <button @click="${() => this.startplaying('rock')}">Rock</button>
+        <button @click="${() => this.startplaying('paper')}">Paper</button>
+        <button @click="${() => this.startplaying('scissors')}">Scissors</button>
+        <p id="outcome"></p>
+      `;
+    }
+  
+    startplaying(playerSelection) {
+      const selections = ['rock', 'paper', 'scissors'];
+      const systemSelection = selections[Math.floor(Math.random() * selections.length)];
+      const resultFeature = this.shadowRoot.getElementById('outcome');
+      const outcome = this.WinORLoss(playerSelection, systemSelection);
+      resultFeature.textContent = `You chose ${playerSelection}. Computer chose ${systemSelection}. ${outcome}`;
+    }
+  
+    WinORLoss(playerSelection, systemSelection) {
+      if (playerSelection === systemSelection) {
+        return "tie!";
+      } else if (
+        (playerSelection === 'rock' && systemSelection === 'scissors') ||
+        (playerSelection === 'paper' && systemSelection === 'rock') ||
+        (playerSelection === 'scissors' && systemSelection === 'paper')
+      ) {
+        return 'win!';
+      } else {
+        return 'System wins!';
+      }
+    }
   }
-}
+  
 
 customElements.define('widget-block', WidgetBlock);
