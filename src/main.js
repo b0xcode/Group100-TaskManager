@@ -98,7 +98,8 @@ class Comp2110TaskManager extends LitElement {
           <ad-widget></ad-widget>
           <widget-block header="Widget 1"></widget-block>
           <widget-block header="Widget 2"></widget-block>
-          <widget-block header="Widget 3"></widget-block>
+          <widget-block header="T-T-Toe Game">        
+          </widget-block>
         </widget-container>
       </main>
 
@@ -113,6 +114,9 @@ class Comp2110TaskManager extends LitElement {
       </p>
     `;
   }
-}
+  }
+
+
+
 
 customElements.define('comp2110-task-manager', Comp2110TaskManager);
