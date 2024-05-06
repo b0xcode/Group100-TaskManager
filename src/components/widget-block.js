@@ -16,7 +16,7 @@ class WidgetBlock extends LitElement {
         display: block;
         width: 250px;
         height: 250px;
-        background-color: lightblue;
+        background-color: red;
         border: 1px solid red;
     }
   `;
