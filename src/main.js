@@ -74,6 +74,13 @@ class Comp2110TaskManager extends LitElement {
       color: #ede3e3;
     }
 
+    .game-widget {
+      display: flex;
+      flex-direction:column;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
     .app-footer a {
       margin-left: 5px;
     }
@@ -94,11 +101,11 @@ class Comp2110TaskManager extends LitElement {
 
       <main>      
         <task-manager></task-manager>     
-        <widget-container header="Widgets">
+        <widget-container class="widget-container" header="Widgets">
           <ad-widget></ad-widget>
           <widget-block header="Widget 1"></widget-block>
           <widget-block header="Widget 2"></widget-block>
-          <widget-block header="Tic-Tac-Toe"></widget-block>
+          <widget-block class="game-widget" header="Tic-Tac-Toe"></widget-block>
         </widget-container>
       </main>
 
