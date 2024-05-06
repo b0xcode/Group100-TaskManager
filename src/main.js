@@ -98,14 +98,6 @@ class Comp2110TaskManager extends LitElement {
           <ad-widget></ad-widget>
           <widget-block header="Widget 1"></widget-block>
           <widget-block header="Widget 2"></widget-block>
-
-          <h3> Rock, Paper, Scissors Game </h3>
-
-          <button @click="${() => this.startplaying('rock')}">Rock</button>
-          <button @click="${() => this.startplaying('paper')}">Paper</button>
-          <button @click="${() => this.startplaying('scissors')}">Scissors</button>
-          <p id="outcome"></p>
-          
           <widget-block header="Widget 3"></widget-block>
         </widget-container>
       </main>
@@ -120,30 +112,9 @@ class Comp2110TaskManager extends LitElement {
         >.
       </p>
     `;
-  }
-  WinORLoss(playerSelection, systemSelection) {
-    if (playerSelection === systemSelection) {
-      return "tie!";
-    } else if (
-      (playerSelection === 'rock' && systemSelection === 'scissors') ||
-      (playerSelection === 'paper' && systemSelection === 'rock') ||
-      (playerSelection === 'scissors' && systemSelection === 'paper')
-    ) {
-      return 'win!';
-    } else {
-      return 'System wins!';
-    }
-  }
-
-  startplaying(playerSelection) {
-    const selections = ['rock', 'paper', 'scissors'];
-    const systemSelection = selections[Math.floor(Math.random() * selections.length)];
-    const resultFeature = this.shadowRoot.getElementById('outcome');
-    const outcome = this.WinORLoss(playerSelection, systemSelection);
-    resultFeature.textContent = `You chose ${playerSelection}. Computer chose ${systemSelection}. ${outcome}`;
-  }
+  
 }
 
-  
+}
 
 customElements.define('comp2110-task-manager', Comp2110TaskManager);
