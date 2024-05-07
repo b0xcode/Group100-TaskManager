@@ -31,6 +31,7 @@ class Comp2110TaskManager extends LitElement {
       flex-direction: row;
       margin-top: 100px;
       padding-left: 30px;
+      padding-right: 30px;
     }
 
     header {

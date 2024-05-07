@@ -22,7 +22,7 @@ class TaskBoard extends LitElement {
         border-radius: 5px;
         box-shadow: -1px 3px 5px #32484f8b;
         width: 250px;
-        height:auto;
+        align-self:start;
     }
 
     h3{
