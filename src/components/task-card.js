@@ -15,7 +15,7 @@ class TaskCard extends LitElement {
 
   static styles = css`
     :host {
-        display: inline-block;
+        display: block;
         background-color: #fefffe;
         padding: 22px;
         padding-top: 2px;
@@ -38,9 +38,33 @@ class TaskCard extends LitElement {
       content: "⏰";
       display: inline-block;
     }
-    :host div{
-      line-height: 0.5em;
+    :host p{
+      margin: 0.5em;
     }
+
+    .task-content {
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      line-height: 1em;
+    }
+    div{
+      position:relative;
+    }
+    .content-hover{
+      display:none;
+      position:absolute;
+      top:70px;
+      line-height: 1em;
+      backdrop-filter:blur(3px);
+      box-shadow: 0px 2px 8px #112d37;
+      background-color:rgba(180, 195, 200, 0.7);
+      padding: 10px;
+      border-radius:5px;
+      z-index:100;
+    }
+
   `;
 
   connectedCallback() {
@@ -62,10 +86,11 @@ class TaskCard extends LitElement {
       const due = new Date(parseInt(this._task.due));
       return html`
       <div>
+        <div @mouseleave="${this._contentHoverLeave}" class='content-hover'>${this._task.text}</div>
         <h4>${this._task.summary}</h4>
         <p class='task-timestamp'>${ts.toDateString()}</p>
         <p class='task-due'>${due.toDateString()}</p>
-        <p class='task-content'>${this._task.text}</p>
+        <p @mouseenter="${this._contentHoverEnter}"  class='task-content'>${this._task.text}</p>
         <p class='task-priority'>${this._task.priority}</p>
 
         <edit-task id=${this.id}></edit-task>
@@ -75,5 +100,17 @@ class TaskCard extends LitElement {
       return html`<div>Loading...</div>`;
     }
   }
+
+  _contentHoverEnter(event){
+    const isClamped = event.target.scrollHeight > event.target.clientHeight
+    if(isClamped){
+      this.renderRoot.querySelector('.content-hover').style.display = "block";
+    }
+  }
+
+  _contentHoverLeave(event){
+    this.renderRoot.querySelector('.content-hover').style.display = "none";
+  }
+
 }
 customElements.define('task-card', TaskCard);
