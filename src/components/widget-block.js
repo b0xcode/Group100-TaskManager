@@ -25,7 +25,7 @@ class WidgetBlock extends LitElement {
   :host(:not([header="Widget 2"])) {
     background-color: azure;
   }
-`;
+  `;
 
   constructor() {
     super();
