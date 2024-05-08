@@ -17,10 +17,7 @@ class WidgetBlock extends LitElement {
     width: 250px;
     height: 250px;
     border: 1px solid black;
-    transition: background-color 0.3s ease-in-out;
-  }
-  :host([header="Widget 2"]) {
-    background-color: lightgreen;
+   
   }
   :host(:not([header="Widget 2"])) {
     background-color: azure;
