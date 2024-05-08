@@ -108,7 +108,6 @@ class Comp2110TaskManager extends LitElement {
           <widget-block header="Widget 1"></widget-block>
           <widget-block header="Widget 2"></widget-block>
           <game-widget></game-widget>
-          <widget-block class="game-widget" header="Tic-Tac-Toe"></widget-block>
         </widget-container>
       </main>
 
