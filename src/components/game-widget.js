@@ -22,7 +22,7 @@ class GameWidget extends LitElement {
     }
 
     .header {
-      font-size: 30
+      font-size: 23px;
     }
     
 
@@ -59,8 +59,9 @@ class GameWidget extends LitElement {
     }
 
     .GamerA {
-        color: #09C372;
-        size: 80px;
+        color: #F94449;
+        font-weight:bold;
+        font-size: 20px;
     }
 
     .GamerB{
@@ -121,7 +122,7 @@ class GameWidget extends LitElement {
     <body>
     <main class="background">
         <section class="header">
-            <h1>Tic Tac Toe</h1>
+            <h1>Tic! Tac! Toe!</h1>
         </section>
         <section class="showcase">
              <span class="showcase GamerA">Gamer A's turn</span> 
