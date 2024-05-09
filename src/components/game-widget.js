@@ -60,7 +60,7 @@ static styles = css`
 
 
 
-    .hide {
+    .DONTSHOW {
         display: none;
     }
 
@@ -168,24 +168,28 @@ ManagingGameResult() {
   }
 
   if (!this.GameFrame.includes('')) {
-    return 'TIE :)';
+    return 'TIE ';
   }
-
-
 
 
   return null;
 }
+
+
+CallerOf (outcome) {
+  const resultCaller = this.shadowRoot.querySelector('.resultCaller');
+  switch(outcome){
+    case 'X':
+      resultCaller.innerHTML = 'Gamer <span class="GamerX">X</span> Won';
+      break;
+    case 'O':
+      resultCaller.innerHTML = 'Gamer <span class="GamerO">O</span> Won';
+      break;
+    case 'TIE ':
+      resultCaller.innerText = 'It\'s a tie :) ';
+      break;
+  }
+  resultCaller.classList.remove('DONTSHOW');
 }
 
-
-
-
-
-
-  
-
-
-
-
-
+}
