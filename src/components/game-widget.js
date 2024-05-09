@@ -162,4 +162,12 @@ ManagingGameResult() {
     [2, 4, 6]
   ];
 
+  for (let requirement of victoryRequirements) {
+    const [a, b, c] = requirement;
+  }
+
 }
+
+
+
+
