@@ -192,4 +192,97 @@ CallerOf (outcome) {
   resultCaller.classList.remove('DONTSHOW');
 }
 
+
+
+MoveChecker(grid) {
+  return grid.innerText !== 'X' && grid.innerText !== 'O' && this.GameStatus;
 }
+
+
+
+
+GamerMoves(grid, index) {
+  if (this.MoveChecker(grid)) {
+    grid.innerText = this.GamerPlaying;
+    this.GameFrame[index] = this.GamerPlaying;
+
+
+
+
+    const outcome = this.ManagingGameResult();
+    if (outcome) {
+      this.CallerOf(outcome);
+      this.GameStatus = false;
+    } else {
+      this.GamerPlaying = this.GamerPlaying === 'X' ? 'O' : 'X';
+      this.ChangeGamer();
+    }
+  }
+}
+
+
+
+
+resetGameFrame() {
+  this.GameFrame = ['', '', '', '', '', '', '', '', ''];
+  this.GameStatus = true;
+  this.GamerPlaying = 'X';
+  this.ChangeGamer();
+
+
+
+
+  const grids = this.shadowRoot.querySelectorAll('.grid');
+  grids.forEach(grid => {
+    grid.innerText = '';
+  });
+
+
+
+
+  const resultCaller = this.shadowRoot.querySelector('.resultCaller');
+  resultCaller.classList.add('DONTSHOW');
+}
+
+
+
+
+ChangeGamer() {
+  const GamerShown = this.shadowRoot.querySelector('.display');
+  GamerShown.innerText = `Gamer ${this.GamerPlaying}'s turn`;
+}
+
+
+
+
+render() {
+  return html`
+    <main class="background">
+      <section class="header">
+        <h1>Tic! Tac! Toe!</h1>
+      </section>
+      <section class="display">${`Gamer ${this.GamerPlaying}'s turn`}</section>
+      <section class="BLOCK-CONTAINER">
+        ${this.GameFrame.map((cell, index) => html`
+          <div class="grid" @click="${() => this.GamerMoves(this.shadowRoot.querySelector(`.grid:nth-child(${index + 1})`), index)}">${cell}</div>
+        `)}
+      </section>
+      <section class="settings">
+        <button id="restart" @click="${() => this.resetGameFrame()}">Restart</button>
+      </section>
+      <section class="resultCaller DONTSHOW"></section>
+
+
+    </main>
+  `;
+}
+}
+
+
+
+
+customElements.define('game-widget', GameWidget);
+
+
+
+
