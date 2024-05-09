@@ -147,9 +147,6 @@ static styles = css`
 
 
 
-}
-
-
 ManagingGameResult() {
   const victoryRequirements = [
     [0, 1, 2],
@@ -164,9 +161,30 @@ ManagingGameResult() {
 
   for (let requirement of victoryRequirements) {
     const [a, b, c] = requirement;
+
+    if (this.GameFrame[a] && this.GameFrame[a] === this.GameFrame[b] && this.GameFrame[a] === this.GameFrame[c]) {
+      return this.GameFrame[a];
+    }
   }
 
+  if (!this.GameFrame.includes('')) {
+    return 'TIE :)';
+  }
+
+
+
+
+  return null;
 }
+}
+
+
+
+
+
+
+  
+
 
 
 
