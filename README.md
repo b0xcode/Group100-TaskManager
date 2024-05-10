@@ -12,6 +12,20 @@ Initially, I created a file named game-widget.js and made it the designated file
 
 I connected my game-widget.js into the web application by importing it to the main.js file utilising 'import './components/game-widget.js';' at the beginning of the main.js file. Then, I included the '<game-widget></game-widget>', within the <main> component of the main.js file so that the game widget - alongside other widgets - is displayed on the main user interface of our task manager application.  
 
+### Importation of LitElement framework 
+Within my game-widget.js file I imported the LitElement, css and html framework by utilising:
+
+"import {LitElement, html, css} from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';"
+
+The rationale behind the implementation of LitElement was as follows:
+
+- It enabled me to define HTML components within a JS file. In my game-widget.js code I utilised a 'render()' that incorporates Lit HTML to establish the user interface of my Tic-Tac-Toe game. 
+- It enabled me to employ my CSS through the shadow DOM, preventing my CSS from overflowing onto other elements of the task manager application. 
+
+
+
+
+
 
 ## Marlon Ruiz Diaz Contribution Notes
 ### CSS Implementation
