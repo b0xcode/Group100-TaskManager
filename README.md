@@ -72,6 +72,17 @@ The CallerOf() function added to my game-widget.js file is responsible for alter
 This function is responsible for checking whether a game move within the game is valid. It takes grid as the parameter (which represents a grid box within the board) and returns true if a move is valid, signalling that the cell as of now is unoccupied (as innerText does not encompass 'X' or 'o') and the game is ongoing if this.GameStatus is true. If the grid is empty and is neither occupied by 'X' or 'O' then the gamer can make a move and vice versa.
 
 
+### Adding my GamerMoves(grid, index) function:
+
+This function takes the primary role of managing the moves of the gamers 'O' and 'X'. These are the elements that aid in achieving the management of Player moves:
+
+- The parameters are 'grid' (grid is the squares where the 'X' and 'O' moves are made on the board) and 'index' (signals the index of the grid squares).
+- Firstly, the MoveChecker(grid) function checks if a player makes an undoable move (if the grid box is already occupied by either 'X' or 'O'). If the box is occupied the function just exits. 
+- If the move is doable (the grid box is empty) then the grid box is altered with the player's symbol (this.GamerPlaying) either 'X' or 'O', when the player makes their move. The GameFrame array is also accordingly updated to show the change ('X' or 'O') on the board.
+- Upon the move, the ManagingGameResult() function is called to determine whether the game is a win or a tie. If it's a win the CallerOf() function is called to showcase the game result and the Game Status is fixed to 'false' to signal the termination of the game.
+- If the Game has not yet ceases, this.GamePlaying is altered to the Gamer next in line ('O' is changed to 'X' and vice versa) and the user interface is upgraded to show the change via the ChangeGamer() element. 
+
+
 
 
 
