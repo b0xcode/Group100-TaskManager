@@ -17,8 +17,7 @@ class TaskCard extends LitElement {
     :host {
         display: block;
         background-color: #fefffe;
-        padding: 22px;
-        padding-top: 2px;
+        padding: 0.1px 25px 23px;
         margin-bottom: 7px;
         border-radius: 3px;
         box-shadow: 0px 2px #c1b9b9;
@@ -42,6 +41,19 @@ class TaskCard extends LitElement {
       margin: 0.5em;
     }
 
+    #delete-task{
+      color: #7f7979;
+      transition: 0.25s;
+      background:none;
+      border:none;
+      float:right;
+      padding-top: 7px;
+    }
+
+    #delete-task:hover{
+      color: #b3124a;
+    }
+    
     .task-content {
       -webkit-box-orient: vertical;
       display: -webkit-box;
@@ -86,14 +98,15 @@ class TaskCard extends LitElement {
       const due = new Date(parseInt(this._task.due));
       return html`
       <div>
-        <div @mouseleave="${this._contentHoverLeave}" class='content-hover'>${this._task.text}</div>
+        <div @mouseleave="${this.contentHoverLeave}" class='content-hover'>${this._task.text}</div>
         <h4>${this._task.summary}</h4>
         <p class='task-timestamp'>${ts.toDateString()}</p>
         <p class='task-due'>${due.toDateString()}</p>
-        <p @mouseenter="${this._contentHoverEnter}"  class='task-content'>${this._task.text}</p>
+        <p @mouseenter="${this.contentHoverEnter}"  class='task-content'>${this._task.text}</p>
         <p class='task-priority'>${this._task.priority}</p>
 
         <edit-task id=${this.id}></edit-task>
+        <button id="delete-task" @click="${this._deleteTask}">Delete</button>
       </div>
       `;
     } else {
@@ -101,14 +114,18 @@ class TaskCard extends LitElement {
     }
   }
 
-  _contentHoverEnter(event){
+  _deleteTask(){
+    TaskModel.deleteTask(this.id);
+  }
+
+  contentHoverEnter(event){
     const isClamped = event.target.scrollHeight > event.target.clientHeight
     if(isClamped){
       this.renderRoot.querySelector('.content-hover').style.display = "block";
     }
   }
 
-  _contentHoverLeave(event){
+  contentHoverLeave(event){
     this.renderRoot.querySelector('.content-hover').style.display = "none";
   }
 
