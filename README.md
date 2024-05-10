@@ -59,6 +59,14 @@ I added my ManagingGameResult() function within the game-widget.js file. This fu
 - Next the 'for' loop iterates over these requirements, returning the 'X' or 'O' symbol of the player that occupies the successful combinations or a tie if no winning requirements are met. However, if no win or tie occurs then 'null' is returned signalling that the game status is still active. 
 
 
+### Adding my CallerOf() function:
+
+The CallerOf() function added to my game-widget.js file is responsible for altering the user interface of the game-widget to showcase the outcome of the game. This is how the 'switch' statement within this function accomplishes this:
+
+- If the outcome is 'X' - meaning the gamer with the 'X' symbol won the game -> resultCaller announces that "Gamer X won".
+- If the outcome is 'O' - meaning the gamer with the 'O' symbol won the game -> resultCaller announces that "Gamer O won".
+- If the outcome is 'Tie' -> resultCaller announces that "It's a tie".
+
 
 
 
