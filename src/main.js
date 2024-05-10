@@ -6,8 +6,7 @@ import './components/ad-widget.js';
 import './components/login-widget.js';
 import './components/task-manager.js';
 import './components/game-widget.js';
-import './components/calender-widget.js';
-
+import './components/bmi-widget.js';
 /**
  * Comp2110TaskManager component constructs the main UI of the application
  */
@@ -109,6 +108,7 @@ class Comp2110TaskManager extends LitElement {
           <widget-block header="Widget 1"></widget-block>
           <calendar-widget></calendar-widget>
           <widget-block header="Calender Widget"></widget-block>
+          <mood-widget></mood-widget>
           <game-widget></game-widget>
         </widget-container>
       </main>
