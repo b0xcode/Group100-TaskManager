@@ -110,6 +110,20 @@ Within the html code the following components are comprised:
 - The settings class which contains the restart button and the @click=" element to make it user clickable. 
 - The section class "resultCaller DONTSHOW that showcases the game outcome but however is initially hidden before the outcome is known. 
 
+### Adding custom element:
+
+In the end of my game-widget.js file I added the customElements.define('game-widget', GameWidget) which inserts the custom Element game-widget within the Document Object Model of the browser. The custom element is crucial as it enlightens the browser of the game-widget. Hence, the browser will recognise the custom element in the HTML, so it creates and displays the instance GameWidget class defined in the js file game-widget.js. Additionally, customElement is crucial because when the game-widget.js was imported into the main.js file, the fuctionality of the custom element is moved into the main Javascript file.  
+
+
+### Acknowledgements:
+
+The third-party that assisted with my creation of the game code is as follows:
+
+https://www.youtube.com/watch?v=B3pmT7Cpi24
+
+
+
+
 
 
 
