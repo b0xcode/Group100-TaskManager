@@ -91,6 +91,13 @@ The resetGameFrame() function is responsible for reseting the Game, so that a ne
 - Through 'querySelectorAll('.grid'), the grid is derived from the shadow DOM. Then, it goes through each grid component (grid box visible on the board), removing any text within each of these components and thus designating the grid cells to be empty.
 - 'DONTSHOW' is inserted within the  'resultCaller' class to conceal the previous Game outcome. 
 
+### Adding my ChangeGamer() function:
+
+This function is responsible for altering the announcement stating whose turn it is to play. The elements used to achieve this:
+
+- the class '.display' is chosen from the shadow DOM. The display illustrates the Gamer whose turn it is to play.
+- String interpolation is implemented to incorporate the Gamer' (this.GamerPlaying)
+within the display message.
 
 
 
