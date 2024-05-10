@@ -67,6 +67,11 @@ The CallerOf() function added to my game-widget.js file is responsible for alter
 - If the outcome is 'O' - meaning the gamer with the 'O' symbol won the game -> resultCaller announces that "Gamer O won".
 - If the outcome is 'Tie' -> resultCaller announces that "It's a tie".
 
+### Adding my MoveChecker(grid) function:
+
+This function is responsible for checking whether a game move within the game is valid. It takes grid as the parameter (which represents a grid box within the board) and returns true if a move is valid, signalling that the cell as of now is unoccupied (as innerText does not encompass 'X' or 'o') and the game is ongoing if this.GameStatus is true. If the grid is empty and is neither occupied by 'X' or 'O' then the gamer can make a move and vice versa.
+
+
 
 
 
