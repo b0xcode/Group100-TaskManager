@@ -6,7 +6,12 @@ in this file.
 
 ## Ria Karakasis Contribution Notes
 
-Initially, I added a js file for the game widget I was going to implement 
+### Creating the Tic Tac Toe, game-widget.js
+Initially, I created a file named game-widget.js and made it the designated file for all my css, js and html code related to the game widget. 
+
+
+I connected my game-widget.js into the web application by importing it to the main.js file utilising 'import './components/game-widget.js';' at the beginning of the main.js file. Then, I included the '<game-widget></game-widget>', within the <main> component of the main.js file so that the game widget - alongside other widgets - is displayed on the main user interface of our task manager application.  
+
 
 ## Marlon Ruiz Diaz Contribution Notes
 ### CSS Implementation
