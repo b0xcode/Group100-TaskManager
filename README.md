@@ -82,6 +82,19 @@ This function takes the primary role of managing the moves of the gamers 'O' and
 - Upon the move, the ManagingGameResult() function is called to determine whether the game is a win or a tie. If it's a win the CallerOf() function is called to showcase the game result and the Game Status is fixed to 'false' to signal the termination of the game.
 - If the Game has not yet ceases, this.GamePlaying is altered to the Gamer next in line ('O' is changed to 'X' and vice versa) and the user interface is upgraded to show the change via the ChangeGamer() element. 
 
+### Adding my resetGameFrame() function:
+
+The resetGameFrame() function is responsible for reseting the Game, so that a new game with an empty grid frame arises. This is achieved through the following:
+
+-through "this.GameFrame = ['', '', '', '', '', '', '', '', ''];", the grid array is set to be empty.
+- Game status is written to be true so that the game is ongoing. Then GamerPlaying is written to 'X', meaning Gamer X will initiate the game.
+- Through 'querySelectorAll('.grid'), the grid is derived from the shadow DOM. Then, it goes through each grid component (grid box visible on the board), removing any text within each of these components and thus designating the grid cells to be empty.
+- 'DONTSHOW' is inserted within the  'resultCaller' class to conceal the previous Game outcome. 
+
+
+
+
+
 
 
 
