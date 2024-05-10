@@ -100,8 +100,15 @@ This function is responsible for altering the announcement stating whose turn it
 within the display message.
 
 
+### Adding my html component:
 
+Within the html code the following components are comprised:
 
+- The section class 'Header' which contains header h1, that defines the title Tic! Tac! Toe!.
+- The section class "display" which showcases which gamer's (this.GamerPlaying) turn it is to play in the game.
+- A grid with the element @click=" that contains grid cells that can be interacted with and are clickable.
+- The settings class which contains the restart button and the @click=" element to make it user clickable. 
+- The section class "resultCaller DONTSHOW that showcases the game outcome but however is initially hidden before the outcome is known. 
 
 
 
