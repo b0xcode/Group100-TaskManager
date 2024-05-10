@@ -110,3 +110,11 @@ I copied my CSS from Assignment 1 to style the website
 - Added mouseenter and mouseleave event listeners
 - Added the function _ContentHoverEnter which is called by mouseenter and checks for if the task content is clamped by webkit-line-clamp by comparing scrollHeight property to clientHeight property. If the content is found to be truncated, then the the content-hover div is set to display:block so the full task content can be viewed
 - Added the function _ContentHoverLeave which is called by the mouseleave event listener to reset the content-hover div back to display:none
+
+#### Edit-task dialogue layout
+- Improved CSS for a more user-friendly look
+
+#### Implementing task deletion
+- Created a new function in models.js called deleteTask()
+- deleteTask() makes a HTTP DELETE request to the server, making sure to use the task ID in the URL and include user authentication in the request header. Upon receiving a response, deleteTask() calls loadData() to trigger a refresh.
+- Added a button to task-card.js that calls a local function called _deleteTask() upon being clicked. This local function passes the task id to the models.js function to trigger deletion.

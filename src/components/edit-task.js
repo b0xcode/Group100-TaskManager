@@ -21,6 +21,13 @@ class EditTask extends LitElement {
           border-radius: 3px;
         }
 
+        dialog{
+          border:none;
+          border-radius:5px;
+          box-shadow:0px 0px 10px #112d37
+          
+        }
+
         #edit-button{
           color: #fefffe;
           background-color: #5db02d;
@@ -45,17 +52,81 @@ class EditTask extends LitElement {
         form {
             display: flex;
             flex-direction: column;
+            padding: 5px 40px 2px 10px;
+            
         }
         form div {
             display: grid;
             grid-template-columns: 1fr 3fr;
+            padding:8px 5px;
+            
         }
+
+        form div label {
+          justify-self:end;
+          align-self:center;
+          padding-right:10px;
+          color: #7f7979;
+          font-style:italic;
+          font-size:10pt;
+        }
+
+        form div input{
+          border: none;
+          border-radius: 5px;
+          height: 30px;
+          padding-left: 7px;
+          background-color: rgba(230, 245, 245, 0.62);
+          box-shadow: 3px 5px 8px #cdd6da inset;
+          color: #0b2027;
+          font-family:sans-serif;
+          font-size:12pt;
+          transition: .25s;
+        }
+
+        form div textarea{
+          border: none;
+          border-radius: 5px;
+          height: 60px;
+          resize:vertical;
+          max-height:350px;
+          min-height:60;
+          padding: 7px;
+          background-color: rgba(230, 245, 245, 0.62);
+          box-shadow: 3px 5px 8px #cdd6da inset;
+          color: #0b2027;
+          font-family:sans-serif;
+          font-size:12pt;
+          transition: .25s;
+        }
+
+        form div input:focus{
+          outline: none;
+          background-color: #fefffe;
+        }
+
+        form div textarea:focus{
+          outline: none;
+          background-color: #fefffe;
+        }
+
         input[type="submit"] {
-            width: 100%;
+            justify-self:end;
+            padding:7px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 3px;
             border:none;
             color: #fefffe;
             background-color: #5db02d;
-          }
+            box-shadow: 0px 2px #259123;
+            transition: 0.25s;
+            font-size:10pt;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #259123;
+        }
       `;
 
   connectedCallback() {

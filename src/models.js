@@ -154,6 +154,29 @@ class Task {
           this.loadData();
         });
   }
+
+  /**
+   * Delete a task, given its id
+   * @param {number} id 
+   */
+  deleteTask(id){
+    const URL = `${BASE_URL}tasks/${id}`;
+    const user = getUser();
+    fetch(URL, {
+      method: 'DELETE',
+      headers:{
+        'Authorization': 'basic ' + user.token,
+      },
+    } )
+        .then((response) => {
+            this.loadData();
+            return response.json();
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+  }
+
 }
 
 // Export an instance of the task object (singleton) where other modules can
