@@ -22,6 +22,21 @@ The rationale behind the implementation of LitElement was as follows:
 - It enabled me to define HTML components within a JS file. In my game-widget.js code I utilised a 'render()' that incorporates Lit HTML to establish the user interface of my Tic-Tac-Toe game. 
 - It enabled me to employ my CSS through the shadow DOM, preventing my CSS from overflowing onto other elements of the task manager application. 
 
+### Writing out my static properties
+These are all the static properties I inlcuded relevant to my game widget:
+
+ static properties =  {
+    GamerPlaying: { type: String },
+    GameFrame: { type: Array },
+    GameStatus: { type: Boolean }
+  };
+
+  The static properties state the game variables:
+  - GamerPlaying variable: Takes a string 'X' or 'O' which represents the person playing.
+  - GameFrame: An array that represents the game grid boxes that make up the game board/frame.
+  -GameStatus: A boolean that represents whether the game is in action or not.
+
+  
 
 
 
