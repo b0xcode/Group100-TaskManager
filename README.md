@@ -22,7 +22,7 @@ The rationale behind the implementation of LitElement was as follows:
 - It enabled me to define HTML components within a JS file. In my game-widget.js code I utilised a 'render()' that incorporates Lit HTML to establish the user interface of my Tic-Tac-Toe game. 
 - It enabled me to employ my CSS through the shadow DOM, preventing my CSS from overflowing onto other elements of the task manager application. 
 
-### Writing out my static properties
+### Writing out my static properties/Game Variables
 These are all the static properties I inlcuded relevant to my game widget:
 
  static properties =  {
@@ -36,7 +36,19 @@ These are all the static properties I inlcuded relevant to my game widget:
   - GameFrame: An array that represents the game grid boxes that make up the game board/frame.
   -GameStatus: A boolean that represents whether the game is in action or not.
 
+### Adding my CSS into my widget-game.js
+
+I entered my css code within my widget-game.js. My CSS code comprised of the following:
+
+- The grid,
+- The colour andd font of the GamerB and GamerA display, 
+- The colour and aesthetic of the restart button, - The colour of the board's background,
+- The title font size,
+- The margin of the board display,
+- The height and width of the grid columns and rows,
+- etc.
   
+
 
 
 
