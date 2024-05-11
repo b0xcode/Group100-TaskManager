@@ -14,12 +14,10 @@ class CalendarWidget extends LitElement {
         width: 400px;
         height: auto;
         margin: auto;
-        padding: 0;
         background-color: #fff;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         border-radius: 8px;
         box-sizing: border-box;
-        border: 20px solid #b38add;
+        border: 2px solid #black;
     }
     .calendar-header {
         background-color: #b38add;
