@@ -8,6 +8,7 @@ import './components/task-manager.js';
 import './components/game-widget.js';
 import './components/bmi-widget.js';
 import './components/mood-widget.js';
+import './components/calendar-widget.js';
 
 
 
@@ -120,7 +121,6 @@ class Comp2110TaskManager extends LitElement {
           <ad-widget></ad-widget>
           <mood-widget></mood-widget>
           <calendar-widget></calendar-widget>
-          <widget-block header="Calender Widget"></widget-block>
           <game-widget></game-widget>
         </widget-container>
       </main>
