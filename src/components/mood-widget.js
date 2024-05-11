@@ -34,6 +34,7 @@ class MoodWidget extends LitElement {
       background: red;
       font-family: Papyrus;
     }
+    
     .Hope{
       background: MediumSpringGreen;
       font-family: Papyrus;
