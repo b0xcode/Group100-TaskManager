@@ -26,7 +26,7 @@ static styles = css`
         background-color: #ADDFFF;
         color: #1F456E;
         text-align: center;
-
+        border-radius: 8px;
 
 
 

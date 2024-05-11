@@ -9,6 +9,7 @@ class MoodWidget extends LitElement {
         height: 250px;
         background-color: lightblue;
         text-align: center;
+        border-radius: 8px;
         
     }
     h2 {
