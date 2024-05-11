@@ -35,7 +35,7 @@ class MoodWidget extends LitElement {
       font-family: Papyrus;
     }
     .Hope{
-      background: lightgreen;
+      background: MediumSpringGreen;
       font-family: Papyrus;
     }
     `
@@ -52,7 +52,7 @@ class MoodWidget extends LitElement {
     }
 
     hopeButton(){
-      this.style.background = 'lightgreen';
+      this.style.background = 'lime';
     }
 
     connectedCallback() {
