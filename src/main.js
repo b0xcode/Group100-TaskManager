@@ -11,6 +11,7 @@ import './components/mood-widget.js';
 
 
 
+import './components/create-task.js';
 /**
  * Comp2110TaskManager component constructs the main UI of the application
  */
@@ -56,7 +57,7 @@ class Comp2110TaskManager extends LitElement {
     }
     
     header>h2 {
-      flex-grow: 0.2;
+      flex-grow: 0.1;
       padding: 2px;
       padding-top: 10px;
       padding-left: 50px;
@@ -69,7 +70,14 @@ class Comp2110TaskManager extends LitElement {
     header>h2:before {
       content: "📝";
     }
-  
+    
+    create-task{
+      margin-right:auto;
+    }
+
+    login-widget{
+      margin-right:auto;
+    }
 
     .app-footer {
       font-size: calc(12px + 0.5vmin);
@@ -102,6 +110,7 @@ class Comp2110TaskManager extends LitElement {
     return html`
       <header>
         <h2>${this.header}</h2>
+        <create-task></create-task>
         <login-widget></login-widget>
       </header>
 

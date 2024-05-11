@@ -53,7 +53,7 @@ class TaskCard extends LitElement {
     #delete-task:hover{
       color: #b3124a;
     }
-    
+
     .task-content {
       -webkit-box-orient: vertical;
       display: -webkit-box;
@@ -88,8 +88,17 @@ class TaskCard extends LitElement {
     });
   }
 
+
+
   _loadData() {
-    this._task = TaskModel.getTask(this.id);
+    let task = TaskModel.getTask(this.id);
+    if(task != null){this._task = task;}
+    //this._task = TaskModel.getTask(this.id);
+    //console.log(this._task);
+    // if(this._task == null){
+    //   console.log(this.id + " returned NULL");
+    //   this.style.display = 'none';
+    // }
   }
 
   render() {

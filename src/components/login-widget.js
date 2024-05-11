@@ -18,7 +18,10 @@ class LoginWidget extends LitElement {
     :host {
         display: block;
         color: #fefffe;
-        line-height: 0.5em;
+        line-height: 1em;
+    }
+    p{
+      margin-bottom:5px;
     }
     button {
       background: none;

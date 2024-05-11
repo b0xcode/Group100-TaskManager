@@ -139,7 +139,7 @@ I copied my CSS from Assignment 1 to style the website
 - Added the function _ContentHoverEnter which is called by mouseenter and checks for if the task content is clamped by webkit-line-clamp by comparing scrollHeight property to clientHeight property. If the content is found to be truncated, then the the content-hover div is set to display:block so the full task content can be viewed
 - Added the function _ContentHoverLeave which is called by the mouseleave event listener to reset the content-hover div back to display:none
 
-#### Edit-task dialogue layout
+#### Edit-task dialog layout
 - Improved CSS for a more user-friendly look
 
 #### Implementing task deletion

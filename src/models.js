@@ -102,7 +102,7 @@ class Task {
     for (const category in this._tasks) {
       for (const task of this._tasks[category]) {
         // need a == comparison here in case id is a string
-        if (task.id == id) {
+        if (task !=null && task.id == id) {
           return task;
         }
       }
@@ -168,14 +168,35 @@ class Task {
         'Authorization': 'basic ' + user.token,
       },
     } )
-        .then((response) => {
-            this.loadData();
-            return response.json();
-        })
-        .catch((error) => {
-          console.log(error);
+        .then((response) => response.json())
+        .then((data) => {
+          this.loadData()
         });
   }
+
+    /**
+   * Create a task.  Sends a creation request to the
+   * server and then refreshes the local task store (async)
+   * Then triggers a refresh with loadData()
+   * @param {Object} newTask
+   */
+    createTask(newTask) {
+      const URL = `${BASE_URL}tasks/`;
+      const user = getUser();
+      fetch(URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'basic ' + user.token,
+        },
+        body: JSON.stringify({...newTask}),
+      } )
+          .then((response) => response.json())
+          .then((data) => {
+            this.loadData();
+          });
+    }
+  
 
 }
 
