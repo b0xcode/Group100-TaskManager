@@ -146,3 +146,14 @@ I copied my CSS from Assignment 1 to style the website
 - Created a new function in models.js called deleteTask()
 - deleteTask() makes a HTTP DELETE request to the server, making sure to use the task ID in the URL and include user authentication in the request header. Upon receiving a response, deleteTask() calls loadData() to trigger a refresh.
 - Added a button to task-card.js that calls a local function called _deleteTask() upon being clicked. This local function passes the task id to the models.js function to trigger deletion.
+
+
+
+
+
+## Francine Morales Contribution Notes
+
+### Summary of the mood-widget
+- Styled the colours of the button by applying different classes to it.
+- Created different functions for each button that when the function is called through the 'click' event listener, it changes the background colour.
+- Added eventlisteners for the callback function as well a @click attribute in the HTML button element, this allows the button to call a function when clicked.
