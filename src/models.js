@@ -71,6 +71,7 @@ class Task {
    */
   _updateEvent() {
     // send out an update event
+    console.log(this._tasks);
     const event = new CustomEvent('tasks');
     window.dispatchEvent(event);
   }
@@ -128,6 +129,41 @@ class Task {
       }
     }
     return result;
+  }
+
+  getHighestPriority(){
+    const tasks = this.getTasks();
+    const result = [];
+    if(tasks.length == 0){
+        return result;
+    }
+    let priority = tasks[0].priority;
+    for (let i=0; i<tasks.length; i++) {
+      if(tasks[i].priority < priority){
+        priority = tasks[i].priority;
+      }
+    }
+    for(let i=0; i<tasks.length;i++){
+        if(tasks[i].priority == priority){
+            result.push(tasks[i]);
+        }
+    }
+    return result;
+  }
+
+  getAmountOfTasks(category=null){
+    if(this._tasks.length == 0){
+      return result;
+  }
+    if (category) {
+      return this._tasks[category].length || 0;
+    } else {
+      let count = 0;
+      for (const cat in this._tasks) {
+        count++;
+      }
+      return count;
+    }
   }
 
   /**

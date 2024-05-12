@@ -6,7 +6,7 @@ import './components/ad-widget.js';
 import './components/login-widget.js';
 import './components/task-manager.js';
 import './components/game-widget.js';
-import './components/bmi-widget.js';
+import './components/summary-widget.js';
 import './components/mood-widget.js';
 import './components/calendar-widget.js';
 
@@ -119,6 +119,7 @@ class Comp2110TaskManager extends LitElement {
         <task-manager></task-manager>     
         <widget-container class="widget-container" header="Widgets">
           <ad-widget></ad-widget>
+          <summary-widget></summary-widget>
           <mood-widget></mood-widget>
           <calendar-widget></calendar-widget>
           <game-widget></game-widget>
