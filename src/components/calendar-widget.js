@@ -46,14 +46,23 @@ class CalendarWidget extends LitElement {
         background-color: #fff;
         border: 1px solid #ccc;
     }
+
+    .day:hover {
+        background-color: #e0e0e0; 
+    }
+
     .today {
-        background-color: #4CAF50;
+        background-color: #CBC3E3;
         color: white;
     }
-    .due {
+   
+    .due::after {
+        content: ""; 
+        display: block;
+        margin-top: 2px;
+        height: 3px;
         background-color: red;
-        color: white;
-
+        width: 100%;
     }
 `;
 
