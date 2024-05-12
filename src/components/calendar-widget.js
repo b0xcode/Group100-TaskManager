@@ -17,7 +17,7 @@ class CalendarWidget extends LitElement {
         background-color: #fff;
         border-radius: 8px;
         box-sizing: border-box;
-        border: 2px solid #black;
+        border: 1px solid black;
     }
     .calendar-header {
         background-color: #b38add;
@@ -57,6 +57,7 @@ constructor() {
     this.currentYear = new Date().getFullYear();
     this.currentMonth = new Date().getMonth();
     this.currentTasks = [];
+    
 }
 
 connectedCallback() {
