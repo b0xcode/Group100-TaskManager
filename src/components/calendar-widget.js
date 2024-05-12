@@ -32,7 +32,7 @@ class CalendarWidget extends LitElement {
         display: flex;
         justify-content: space-between;
         padding: 10px;
-        background-color: #f3f3f3;
+        background-color:#CBC3E3;
     }
     .days-header, .days {
         display: grid;
