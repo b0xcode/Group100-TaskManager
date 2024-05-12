@@ -1,5 +1,5 @@
 import {LitElement, html, css} from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
-
+import {TaskModel} from '../models.js';
 
 class CalendarWidget extends LitElement {
     static properties = {
@@ -50,6 +50,11 @@ class CalendarWidget extends LitElement {
         background-color: #4CAF50;
         color: white;
     }
+    .due {
+        background-color: red;
+        color: white;
+
+    }
 `;
 
 constructor() {
@@ -63,11 +68,28 @@ constructor() {
 connectedCallback() {
     super.connectedCallback();
     this.fetchTasks();
+    window.addEventListener('tasks', () => {
+        this.fetchTasks(); 
+    });
 }
 
 fetchTasks() {
-    this.currentTasks = TaskModel.getTasksForMonth(this.currentMonth, this.currentYear);
-    this.requestUpdate();
+    const tasks = TaskModel.getTasks();
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); 
+
+    this.currentTasks = tasks.filter(task => {
+        const dueDate = new Date(task.due);
+        dueDate.setHours(0, 0, 0, 0); 
+
+        return dueDate >= today &&  
+               dueDate.getFullYear() === this.currentYear &&
+               dueDate.getMonth() === this.currentMonth &&
+               !task.isCompleted;  
+    });
+
+    this.requestUpdate();  
+ 
 }
 
 render() {
@@ -94,8 +116,12 @@ renderDays() {
 
     for (let day = 1; day <= numDays; day++) {
         const classes = ['day'];
-        if (this.isToday(day)) classes.push('today');
-        if (this.isDue(day)) classes.push('due');
+        if (this.isToday(day)) {
+            classes.push('today');
+        }
+        if (this.isDue(day)) {
+            classes.push('due');  
+        }
         days.push(html`<div class="${classes.join(' ')}">${day}</div>`);
     }
 
@@ -137,7 +163,9 @@ isDue(day) {
     const date = new Date(this.currentYear, this.currentMonth, day);
     return this.currentTasks.some(task => {
         const taskDate = new Date(task.due);
-        return taskDate.getDate() === date.getDate();
+        return taskDate.getDate() === date.getDate() &&
+               taskDate.getMonth() === date.getMonth() &&
+               taskDate.getFullYear() === date.getFullYear();
     });
 }
 }
