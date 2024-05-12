@@ -181,7 +181,7 @@ class CreateTask extends LitElement {
   render() {
     // convert due date from milliseconds time to an ISO string
     // suitable for the datetime-local form input
-    const isoString = new Date('05 October 2011 14:48 UTC').toISOString();
+    const isoString = new Date(Date.now()).toISOString();
     const due = isoString.substring(0, isoString.indexOf('T') + 6);
     return html`
         <button @click=${this._showModal} id="create-button">Create Task</button>
