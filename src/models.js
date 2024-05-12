@@ -71,7 +71,6 @@ class Task {
    */
   _updateEvent() {
     // send out an update event
-    console.log(this._tasks);
     const event = new CustomEvent('tasks');
     window.dispatchEvent(event);
   }
@@ -150,7 +149,7 @@ class Task {
     }
     return result;
   }
-  
+
   /**
    * Update a task, given its id.  Sends an update request to the
    * server and then refreshes the local task store (async)
