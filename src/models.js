@@ -150,22 +150,7 @@ class Task {
     }
     return result;
   }
-
-  getAmountOfTasks(category=null){
-    if(this._tasks.length == 0){
-      return result;
-  }
-    if (category) {
-      return this._tasks[category].length || 0;
-    } else {
-      let count = 0;
-      for (const cat in this._tasks) {
-        count++;
-      }
-      return count;
-    }
-  }
-
+  
   /**
    * Update a task, given its id.  Sends an update request to the
    * server and then refreshes the local task store (async)

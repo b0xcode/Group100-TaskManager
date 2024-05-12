@@ -22,19 +22,87 @@ class TaskSummary extends LitElement {
 
   static styles = css`
   :host {
+    box-sizing:border-box;
     display: block;
     width: 400px;
-    border: 1px solid black;
-   
+    border: none;
+    border-radius:5px;
+    background-color: rgba(254, 255, 254, 0.52);
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 0px 3px #fefffe;
+    padding: 5px 25px 15px;
   }
-  :host(:not([header="Widget 2"])) {
-    background-color: azure;
+
+  h3{
+    color:#6d6a6a;
+    text-align:center;
+    text-shadow:0px 1px 8px #fefffe;
+    font-weight:normal;
+    margin:8px;
+    font-size:1.3em;
   }
+  table{
+    padding:15px;
+  }
+  th{
+    font-style:italic;
+    color:#6d6a6a;
+    font-weight: normal;
+  }
+
+  td{
+    color:#0b2027;
+    padding-left: 8px;
+    padding-top: 6px;
+    border-top: 1px dashed #7f7979;
+  }
+
+  #summary-tables{
+    display:flex;
+    align-items:center;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #e6f4f484;
+    border-radius:3px;
+    padding: 0px 5px;
+  }
+
+  #due-table{
+    border-right: 1px dashed #7f7979;
+  }
+
+  #priority-table td{
+    background-color: #fefefe88;
+    padding:10px;
+    border-radius:3px;
+    border: 1px dashed #7f7979;
+  }
+
+  #priority-due{
+    font-style:italic;
+    font-size:0.8em;
+    color: #6d6a6a
+  }
+
+  #status-table{
+    width:100%;
+    padding:0;
+    padding-bottom:10px;
+  }
+
+  #status-table td{
+    padding-left:28px;
+  }
+
+  #status-table span{
+    color:#9a0f4d;
+  }
+
   `;
 
   constructor() {
     super();
-    this.header = 'Task Summary';
+    this.header = 'Task Summary📈';
     this._loadData();
     // set an event listener to refresh the display when the data is ready
     window.addEventListener('tasks', () => {
@@ -59,26 +127,27 @@ class TaskSummary extends LitElement {
   render() {
     return html`
         <h3>${this.header}</h3>
+        <div>
+        <table id="status-table">
+            <tr><th>Status</th></tr>
+            <tr><td>Currently doing <span>${this._doingCount}</span> tasks</td></tr>
+            <tr><td>Done <span>${this._doneCount}</span> tasks</td></tr>
+            <tr><td><span>${this._todoCount}</span> tasks still to do</td></tr>
+            <tr><td><span>${this._totalTasks}</span> total tasks</td></tr>
+        </table>
+        </div>
         <div id="summary-tables">
         <table id="due-table">
             <tr>
             <th>Due Today - <span id="due-count">${this._dueToday.length} ${this._dueToday.length == 1 ? "task" : "tasks"}</span></th>
             </tr>
-            ${this._dueToday.map((task) => { return html`<tr>${task.summary}</tr>`;})}
+            ${this._dueToday.map((task) => { return html`<tr><td>${task.summary}</td></tr>`;})}
         </table>
 
         <table id="priority-table">
             <tr><th>Highest Priority</th></tr>
-            ${this._highestPriority.map((task)=> { return html`<tr><span>${task.summary}</span></tr>`})}
-        </table>
-        </div>
-        <div>
-        <table id="status-table">
-            <tr><th>Status</th></tr>
-            <tr><td>Currently doing <span class="stats">${this._doingCount}</span> tasks</td></tr>
-            <tr><td>Done <span class="stats">${this._doneCount}</span> tasks</td></tr>
-            <tr><td><span class="stats">${this._todoCount}</span> tasks still to do</td></tr>
-            <tr><td><span class="stats">${this._totalTasks}</span> total tasks</td></tr>
+            ${this._highestPriority.map((task)=> { return html`<tr><td>${task.summary}<br>
+            <span id="priority-due">Due ${new Date(parseInt(task.due)).toLocaleDateString()}</span></td></tr>`})}
         </table>
         </div>
     `;
