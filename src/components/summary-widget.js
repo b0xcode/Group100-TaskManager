@@ -129,10 +129,10 @@ class TaskSummary extends LitElement {
         <div>
         <table id="status-table">
             <tr><th>Status</th></tr>
-            <tr><td>Currently doing <span>${this._doingCount}</span> tasks</td></tr>
-            <tr><td>Done <span>${this._doneCount}</span> tasks</td></tr>
-            <tr><td><span>${this._todoCount}</span> tasks still to do</td></tr>
-            <tr><td><span>${this._totalTasks}</span> total tasks</td></tr>
+            <tr><td>Currently doing <span>${this._doingCount}</span> ${this._doingCount == 1 ? "task" : "tasks"}</td></tr>
+            <tr><td>Done <span>${this._doneCount}</span> ${this._doneCount == 1 ? "task" : "tasks"}</td></tr>
+            <tr><td><span>${this._todoCount}</span> ${this._todoCount == 1 ? "task" : "tasks"} still to do</td></tr>
+            <tr><td><span>${this._totalTasks}</span> total ${this._totalTasks == 1 ? "task" : "tasks"}</td></tr>
         </table>
         </div>
         <div id="summary-tables">
