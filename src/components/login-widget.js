@@ -35,6 +35,47 @@ class LoginWidget extends LitElement {
     button:hover {
       color: #fefffe;
     }
+
+    .field{
+      box-sizing:border-box;
+      border: none;
+      border-radius: 3px;
+      padding:7px;
+      height: 25px;
+      margin: 5px;
+      background-color: rgba(230, 245, 245, 0.62);
+      box-shadow: 3px 5px 8px #cdd6da inset;
+      color: #0b2027;
+      font-family:sans-serif;
+      font-size:12pt;
+      transition: .25s;
+    }
+    .field::placeholder {
+      color: #0b2027;
+    }
+
+    .field:focus{
+      outline: none;
+      background-color: #fefffe;
+    }
+
+    #login-button{
+      border: none;
+      padding: 5px 10px;
+      border-radius: 3px;
+      background-color: #dedede;
+      box-shadow: 0px 2px #6e6e6e;
+      transition: 0.25s;
+    }
+
+    #login-button:hover{
+      background-color: #fefefe;
+    }
+
+    #login-button:active{
+      transform: translateY(2px);
+      box-shadow:none;
+    }
   
     `;
 
@@ -78,9 +119,9 @@ class LoginWidget extends LitElement {
     return html`
       <p>${this._errorMessage}</p>
       <form @submit=${this._submitForm}>
-          Username: <input name="username">
-          Password: <input type="password" name="password">
-          <input type='submit' value='Login'>
+          <input class="field" name="username" placeholder="Username">
+          <input class="field" type="password" name="password" placeholder="Password">
+          <input id="login-button" type='submit' value='Login'>
       </form>`;
   }
 }

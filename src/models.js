@@ -130,6 +130,26 @@ class Task {
     return result;
   }
 
+  getHighestPriority(){
+    const tasks = this.getTasks();
+    const result = [];
+    if(tasks.length == 0){
+        return result;
+    }
+    let priority = tasks[0].priority;
+    for (let i=0; i<tasks.length; i++) {
+      if(tasks[i].priority < priority){
+        priority = tasks[i].priority;
+      }
+    }
+    for(let i=0; i<tasks.length;i++){
+        if(tasks[i].priority == priority){
+            result.push(tasks[i]);
+        }
+    }
+    return result;
+  }
+
   /**
    * Update a task, given its id.  Sends an update request to the
    * server and then refreshes the local task store (async)

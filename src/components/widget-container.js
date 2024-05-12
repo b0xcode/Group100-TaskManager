@@ -17,6 +17,16 @@ class WidgetContainer extends LitElement {
     div {
       display: flex;
       flex-direction: column;
+      gap:10px;
+      align-items:center;
+    }
+    hr{
+      border:1px dashed #5f6969;
+      width:90%;
+    }
+    h2{
+      margin:0;
+      margin-top:20px;
     }
   `;
 
@@ -28,7 +38,8 @@ class WidgetContainer extends LitElement {
   render() {
     return html`
       <div>
-        <h2>${this.header}</h2>
+      <h2>${this.header}</h2>
+      <hr>
         <slot></slot>
       </div>
     `;

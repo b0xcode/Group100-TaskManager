@@ -107,6 +107,22 @@ class CreateTask extends LitElement {
           transition: .25s;
         }
 
+        form div select{
+            border: none;
+            border-radius: 5px;
+            height: 30px;
+            resize:vertical;
+            max-height:350px;
+            min-height:60;
+            padding: 7px;
+            background-color: rgba(230, 245, 245, 0.62);
+            box-shadow: 3px 5px 8px #cdd6da inset;
+            color: #0b2027;
+            font-family:sans-serif;
+            font-size:12pt;
+            transition: .25s;
+          }
+
         form div input:focus{
           outline: none;
           background-color: #fefffe;
@@ -116,6 +132,11 @@ class CreateTask extends LitElement {
           outline: none;
           background-color: #fefffe;
         }
+
+        form div select:focus{
+            outline: none;
+            background-color: #fefffe;
+          }
 
         input[type="submit"] {
             justify-self:end;
@@ -152,6 +173,7 @@ class CreateTask extends LitElement {
     const newTask = {
       summary: formData.get('summary'),
       text: formData.get('text'),
+      category: formData.get('category'),
       priority: formData.get('priority'),
       due: due.valueOf(),
     };
@@ -181,12 +203,21 @@ class CreateTask extends LitElement {
   render() {
     // convert due date from milliseconds time to an ISO string
     // suitable for the datetime-local form input
-    const isoString = new Date('05 October 2011 14:48 UTC').toISOString();
+    const isoString = new Date(Date.now()).toISOString();
     const due = isoString.substring(0, isoString.indexOf('T') + 6);
     return html`
         <button @click=${this._showModal} id="create-button">Create Task</button>
         <dialog id="create-task-dialog">
             <form @submit="${this._submit}">
+                <div>
+                    <label for="category">Task board</label>
+                    <select name="category">
+                    <option value="ToDo">ToDo</option>
+                    <option value="Doing">Doing</option>
+                    <option value="Done">Done</option>
+                    </select>
+                
+                </div>
                 <div>
                     <label for="summary">Summary</label>
                     <input name="summary" value=${this.summary}>

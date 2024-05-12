@@ -6,7 +6,7 @@ import './components/ad-widget.js';
 import './components/login-widget.js';
 import './components/task-manager.js';
 import './components/game-widget.js';
-import './components/bmi-widget.js';
+import './components/summary-widget.js';
 import './components/mood-widget.js';
 import './components/calendar-widget.js';
 
@@ -33,7 +33,7 @@ class Comp2110TaskManager extends LitElement {
 
     main {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       display: -webkit-flex;
       flex-direction: row;
       margin-top: 100px;
@@ -89,17 +89,15 @@ class Comp2110TaskManager extends LitElement {
       color: #ede3e3;
     }
 
-    .game-widget {
-      display: flex;
-      flex-direction:column;
-      justify-content: flex-start;
-      align-items: center;
-    }
-
     .app-footer a {
       margin-left: 5px;
     }
     
+    #ad-block{
+      display:flex;
+      gap:5px;
+    }
+
   `;
 
   constructor() {
@@ -118,8 +116,8 @@ class Comp2110TaskManager extends LitElement {
       <main>      
         <task-manager></task-manager>     
         <widget-container class="widget-container" header="Widgets">
-          <ad-widget></ad-widget>
-          <mood-widget></mood-widget>
+          <summary-widget></summary-widget>
+          <div id="ad-block"><mood-widget></mood-widget><ad-widget></ad-widget></div>
           <calendar-widget></calendar-widget>
           <game-widget></game-widget>
         </widget-container>
