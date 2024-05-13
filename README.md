@@ -1,5 +1,4 @@
 # COMP2110 Task Manager 2024
-- Testing out commit errors
 As part of your assignment submission, write notes about your implementation
 in this file.
 
@@ -129,7 +128,7 @@ https://www.youtube.com/watch?v=B3pmT7Cpi24
 
 ## Marlon Ruiz Diaz Contribution Notes
 ### CSS Implementation
-I copied my CSS from Assignment 1 to style the website
+I copied my CSS from Assignment 1 to style the website, with some adjustments.
 
 ### Extending task-card.js
 #### Hover box
@@ -147,6 +146,27 @@ I copied my CSS from Assignment 1 to style the website
 - deleteTask() makes a HTTP DELETE request to the server, making sure to use the task ID in the URL and include user authentication in the request header. Upon receiving a response, deleteTask() calls loadData() to trigger a refresh.
 - Added a button to task-card.js that calls a local function called _deleteTask() upon being clicked. This local function passes the task id to the models.js function to trigger deletion.
 
+#### Implementing task creation
+- Created a new function in models.js called createTask()
+- Created a new element called create-task that appears as a button. When clicked, it displays a menu that is very similar to the task editing menu.
+- When the form is submitted, createTask() is called to handle it
+- createTask() makes a HTTP POST request containing the data from the task creation form.
+- createTask() then calls loadData() to trigger a refresh
+
+#### Issues
+While the current code for task creation and deletion successfully communicates with the server, the task boards do not immediately display correctly and require the user to refresh the page in order to display the new task board. After spending a few hours trying to fix these bugs, I was unsuccessful in making any improvements.
+
+### Creating the Task Summary widget
+The Task Summary widget uses the Task Model to fetch task data. I added one extra function to models.js for this widget. The constructor for this widget contains an event listener that detects the 'tasks' event and then updates the information in the summary.
+
+#### Status menu
+The widget uses TaskModel.getTasks() to find the amount of tasks in each category
+
+#### Due Today menu
+The widget displays the output from TaskModel.getTasksForDay() to show all tasks due on today's date
+
+#### Highest Priority Tasks
+To display the highest priority tasks I implemented a function in models.js that returns the highest priority task, or all the highest priority tasks if there is more than one task with the highest priority value.
 
 
 

@@ -91,14 +91,7 @@ class TaskCard extends LitElement {
 
 
   _loadData() {
-    let task = TaskModel.getTask(this.id);
-    if(task != null){this._task = task;}
-    //this._task = TaskModel.getTask(this.id);
-    //console.log(this._task);
-    // if(this._task == null){
-    //   console.log(this.id + " returned NULL");
-    //   this.style.display = 'none';
-    // }
+    this._task = TaskModel.getTask(this.id);
   }
 
   render() {

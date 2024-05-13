@@ -3,9 +3,9 @@ import { TaskModel } from '../models.js';
 
 
 /**
- * WidgetBlock <widget-block header="Sample Widget">
- * Base example for a widget, used as a placeholder in design for unimplemented
- * widgets
+ * TaskSummary <summary-widget></summary-widget>
+ * Widget that displays the number of tasks on each board, summarises the tasks due today, 
+ * and highlights the highest priority tasks.
  */
 class TaskSummary extends LitElement {
   static properties = {
