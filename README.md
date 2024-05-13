@@ -177,3 +177,76 @@ To display the highest priority tasks I implemented a function in models.js that
 - Styled the colours of the button by applying different classes to it.
 - Created different functions for each button that when the function is called through the 'click' event listener, it changes the background colour.
 - Added eventlisteners for the callback function as well a @click attribute in the HTML button element, this allows the button to call a function when clicked.
+
+### James Cheung Contribution Notes 
+
+### Starting the project
+I created a new calender-widget.js file and i linked it to main with the tag <calender></calender>. This enabled me to get rid of the placeholder widget and start making my calender and I also imported lit element and task models.
+
+### Static Properties
+I created three variables to hold the current year, month and an empty array to hold tasks for the current month
+
+### CSS Properties 
+I tested out my CSS on a separate copy of the assignment that wasnt linked to github and I made the CSS flow with the task cards implemented by Marlon by emphasising a purple theme.
+
+### Constructor
+This retreived the current year and month with .getFullYear and .getFullMonth from models.js and initialised tasks and also added super( ) to stop potential class conflicts from occuring.
+
+### connectedCallback():
+This is called on when the Calendercomponent is called on. This code calls fetchtasks( ) tasks to the array property of the widget class and I also set up an event listender so that any changes in events will also be displayed properly. 
+
+### fetchtasks( ):
+This code retrieves all tasks from TaskModel in models.js
+- The code creates a new Date object representing the current date and time by setting everything to 0 which will be used to act like the beginning of the current day.
+
+- Fetched tasks are also filtered for example it iterates over each task using the filter() method and checks if a due date is already past or is within the current month or year. The tasks that meet these conditions are added to the task array.
+- The !isnotCompleted is not relevant and remained from me testing out changes but it did not work
+
+### render ( ) 
+This method focuses on the structure and content of the CalenderWidget. The divs create the calender headers, headers for the days 
+div classes:
+- Calender Header makes the header for the calender
+- header div class makes the left and right arrows that are used to change months
+- The span elment uses getMonthName to show the current month and year
+- The days header div class contains the days elements for each day of the week and is made using the map function
+
+S{this.renderDays()}: This creates the grid of days for current months
+
+### renderDays( )
+- I used an empty array called days to store the days
+- It calculates the index of the first day of the current month (firstDay) using new Date this.currentYear, this.currentMonth, .getDay(), which returns a number representing the day of the week (0 for Sunday, 1 for Monday.
+- The total number of days in the current month (numDays) using new Date(this.currentYear, this.currentMonth + 1, 0),.getDate(), which creates a new date object for the next month and sets its date to 0, which gives the last day of each month
+- It iterates over the days of the week before the first day of the month and adds empty div elements so that they do not display on the calender
+- Afterwards it again iterates over each day of the current month, creating div elements for each day with the class day. If the day is today it adds the today class and due class if the due date is today
+- This function returns the HTML representation of the days grid by joining the days array elements with LitHTML
+
+### decreaseMonth() and increaseMonth()
+- Simple function that decreases and increase by 1 respectively
+
+### ChangeMonth(step)
+- Takes a step parameter to indicate the amount of months to change
+- If currentMonth becomes less than 0, the month index will become 11 (DECEMBER) and the year currentYear will decrease and vice versa
+- Calls fetchtasks afterwards to update displayed tasks
+
+### getMonthIndex()
+- This code represents each month as an index eg (0 for Janurary and so forth etc)
+
+### isToday(day)
+- Takes a day parameter to check if a given day is the current day and compares it with the current day of the month getDate()), getMonth(),(getFullYear()) and by using the current date obtained from new Date(). If these match it returns true or otherwise false. 
+
+### isDue(day)
+This checks whether there are any tasks due on a specific day:
+-	It takes a day parameter and also creates a new Date object using the currentYear, currentMonth, and the day parameter.
+-	It iterates over the currentTasks array using the some(), which returns true if at least one task satisfies the condition 
+-	In the callback function, it creates a taskDate object for each task's due date.
+-	This function also compares the day, month, and year of taskDate 
+-	The method returns the result of the some() method and this will tell us if there are tasks due on the specified day.
+
+### customElements.define('calendar-widget', CalendarWidget);
+- The browser will recognise and render instances of my CalenderWidget class.
+
+
+
+
+
+
