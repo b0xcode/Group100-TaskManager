@@ -15,11 +15,17 @@ The deployment of the URL of our web application was accomplished through the Cl
 
 
 
-5. Upon selecting the "Connect to Github" notice, we were given the option to select in which repository we would like to install Cloudflare and we selected the course repository of "MQCOMP2110-2024":
+5. Upon selecting the "Connect to Github" notice, we were given the option to select in which organisation we would prefer to install Cloudflare and we selected the organisation of "MQCOMP2110-2024":
 
 ![image](https://github.com/MQCOMP2110-2024/web-development-project-group-100/assets/141375524/8dc907a5-bf18-4829-8613-b75d239fa35e)
 
-6. 
+6. Next, we were asked to select from the available repositories and we selected our private group repository of "MQCOMP2110-2024/web-development-project-group-100":
+
+![image](https://github.com/MQCOMP2110-2024/web-development-project-group-100/assets/141375524/3e6d79a7-fca3-4b90-9c87-8e3fad161c6c)
+
+
+  
+7. 
 
 
 
