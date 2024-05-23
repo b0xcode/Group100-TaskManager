@@ -37,4 +37,16 @@ The deployment of the URL of our web application was accomplished through the Cl
 
 ## Individual Reflections:
 
+### Ria's Individual Reflection:
+
+#### Why Widget was chosen?
+
+The widget I chose for the task manager application was the game widget. Specifically, I created a Tic Tac Toe game widget.  I chose the game widget due it's high complexity as I wanted to challenge myself with the logic and general thinking involved within game development. I also wanted to delve more thoroughly into the whole process of game design (through the use of css) which was intricate as with designing a game - the most diminutive details - such as the game button do need to be designed in harmony with the rest of the game user interface, to create an appealing user game interface. 
+
+#### Most challenging aspect of the project?
+
+
+
+
+
 
