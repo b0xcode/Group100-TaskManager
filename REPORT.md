@@ -31,6 +31,8 @@ The deployment of the URL of our web application was accomplished through the Cl
 
 ## Group Achievements:
 
+Each widget undeniably contributed to the harmony and prepossessing design of the user interface of our task manager application. Our game widget engaged users and acted as a medium of fun for users enhancing their task management experience to a more interactive and enjoyable one. Specifically the Tic Tac Toe game widget acts as a break from the mundane routine of managing tasks, rewarding users and thus, encouraging them to stay productive by taking task management more light-heartedly whilst also enjoying a quick game of Tic Tac Toe from time to time. Overall, the achievement with the creation of  a game widget is the provision of an entertaining distraction, alleviating the stress of users and enhancing their focus when returning to the fulfillment of their tasks. Moreover, the light blue, light red and white colour scheme of the game widget was purposeful in harmonising with the modern and minimilistic background image and task card design. Our mood widget .......... Our task summary widget ........ Our Calendar widget......
+
 ## Challenges encountered:
 
 ## Key Rewards: Personal Contributions to Understanding Unit Content:
