@@ -88,5 +88,8 @@ Since Tic Tac Toe has multiple combinations that could result in both the X and 
 
 
 
+### Francine Morales Individual Reflection:
+
+Chosen the Mood Widget due to it's simplicity to create and implement. The most challenging part of the project was doing the widget, I had trouble on getting the eventListeners to activate the desired function. I solved this by re-reading the course notes and rewatching the short videos of the Javascript modules to further understand on how the functions works and how to implement it.
 
 
