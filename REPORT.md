@@ -31,14 +31,19 @@ The deployment of the URL of our web application was accomplished through the Cl
 
 ## Group Achievements:
 
-Each widget undeniably contributed to the harmony and prepossessing design of the user interface of our task manager application. Our game widget engaged users and acted as a medium of fun for users enhancing their task management experience to a more interactive and enjoyable one. Specifically the Tic Tac Toe game widget acts as a break from the mundane routine of managing tasks, rewarding users and thus, encouraging them to stay productive by taking task management more light-heartedly whilst also enjoying a quick game of Tic Tac Toe from time to time. Overall, the achievement with the creation of  a game widget is the provision of an entertaining distraction, alleviating the stress of users and enhancing their focus when returning to the fulfillment of their tasks. Moreover, the light blue, light red and white colour scheme of the game widget was purposeful in harmonising with the modern and minimilistic background image and task card design. Our mood widget .......... Our task summary widget ........ Our Calendar widget......
+Each widget undeniably contributed to the harmony and prepossessing design of the user interface of our task manager application. Our game widget engaged users and acted as a medium of fun for users enhancing their task management experience to a more interactive and enjoyable one. Specifically the Tic Tac Toe game widget acts as a break from the mundane routine of managing tasks, rewarding users and thus, encouraging them to stay productive by taking task management more light-heartedly whilst also enjoying a quick game of Tic Tac Toe from time to time. Overall, the achievement with the creation of  a game widget is the provision of an entertaining distraction, alleviating the stress of users and enhancing their focus when returning to the fulfillment of their tasks. Moreover, the light blue, light red and white colour scheme of the game widget was purposeful in harmonising with the modern and minimilistic background image and task card design. 
+
+The calender widget followed the aesthetic theme of other elements and further contributed to design harmony by focusing on the purple theme prevalent throughout the website. This widgets goal was to support the task cards and act as an efficient interactive visual tool for task management (TO DO, DUE and DONE) by showing tasks and their clear visual representations in their respective months. The ultimate goal of the widget was to provide the user with a smooth and easy visual aid to effectively organise their schedule and streamline planning. The light purple colour scheme was purposelly chosen in order to blend in and harmonise with the background of the website to increase visual appeal and coherence to enhance the user experience. The last element to further enhance user experience were the interactivie buttons which could change the calender month and this aimed to improve user engagement by making the calender a more appealing dynamic tool.
+
+TODO: Our mood widget .......... Our task summary widget ........ 
 
 ## Challenges encountered:
+
+During the start of the project we had trouble understanding the overall file layout and how files were interacting with each other and how data was interacting in the frontend as well as the backend. For example it was difficult to understand The configuration setup in config.js, routing handled by router.js, user authentication in auth.js, task management logic in models.js and how all these files were integrated together. Importing Lit to create a modular web componenet was also challenging at the beginning as it combined javascript, HTML and CSS all into one file which caused confusions at times and some initial confusion in relation to debugging and testing code.  
 
 ### Structural challenges:
 
 Structural challenges were also omnipresent upon completing the task manager application. Initially, the greatest challenge faced with the group members was the synchronisation of alterations to the project between the local repository and the remote repository of GitHub. It was initially complex to wrap our heads around the push and pull processes. However, we managed to resolve this challenge by selecting source control on VS, writing and commiting a comment on the tab of the source control, selecting the ellipsis in source control, selecting "open more option" and then clicking on "push". These completed the 'push' and delivered existing local changes to the GitHub repository. The pull commit was less intricate, involving selecting the "pull" tab on GitHub which fetches these delivered changes from the local repository and merges them into out "main" branch. Although, the process was tedious we all managed to successfully push and pull changes into our "main" branch, resulting in our updated. Additionally, another structural challeng was deciphering the final "css" design and on an overall colour scheme of our individual widgets so that we would generate a visually harmonious user interface. 
-
 
 
 ### Organisational challenges:
@@ -61,6 +66,12 @@ Furthermore, the incorporation of Lit into my individually written code enhanced
 
 ![image](https://github.com/MQCOMP2110-2024/web-development-project-group-100/assets/141375524/23d13a1f-782a-43ff-a571-5f887b25bb40)
 
+### Things that contributed to my understanding of the unit (James)
+Completing the calender widget made me feel confident in implementing the technical skills throughout this unit. The two main things that I felt contributed to my understanding were the implementation of dynamic task handling in the calender and creating a visual aesthetic that matched what I had envisioned. 
+
+In regards to dynamic task handling I felt like my understanding of functions for fetching and updating tasks (via fetchTasks()), rendering calendar days dynamically (via renderDays()), managing user interactions with the calendar (via decreaseMonth(), increaseMonth(), and changeMonth(step)) all contributed to my understanding of content in this unit. Understanding this code logic and successfully manipulating it to create a functional calender while adding my own functions significantly increased my confidence in my ability to properly apply technical skills I had learnt in this unit. This made me feel like I had properly learnt the content and I could apply it in my own way to create something tangible. 
+
+In addition to this, incoporating CSS using Lit further improved my understanding in this unit as this allowed me to style my calender widget within the JS file and gave me hands on experience in designing modular web components. This also helped me consolidate my CSS skills to make the calender as I had envisioned which I could not do at the beginning of this unit. All of these factors combined helped me better understand the purpose of what was taught in the unit and how to apply it practically. 
 
 
 ## Individual Reflections:
@@ -92,4 +103,11 @@ Since Tic Tac Toe has multiple combinations that could result in both the X and 
 
 Chosen the Mood Widget due to it's simplicity to create and implement. The most challenging part of the project was doing the widget, I had trouble on getting the eventListeners to activate the desired function. I solved this by re-reading the course notes and rewatching the short videos of the Javascript modules to further understand on how the functions works and how to implement it.
 
+### James's Individual Reflection:
+
+#### Why Widget was chosen?
+I chose the calender widget for this project because I wanted to challenge myself and understand dynamic task handling. I was interested by the underlying code and interactions as I had only thought about a calender implementation in a static way prior to this. Considering the widespread use of calenders in many websites I also thought that this would be a useful skill to learn and potentially implement in the future. I also wanted to keep practicing my CSS and match the calender aesthetics to the rest of the website to the best of my ability. 
+
+#### Most challenging aspect of the project?
+Personally the most challenging part of the project was the technical aspect. Initially I encountered many challenges in regards to properly linking my calender widget to the rest of the code and understanding the purpose of functions in models.js. It was only after thorough experimentation and testing out each function in depth did I realise the purpose of each function in models.js and how each function could be integrated into the calender widget. I also struggled with understanding the use of the LitElement and how it interacted with TaskModel to fetch tasks due to its dynamic nature and at first I only thought about updating the calender manually. This was challenging as I thought in a static way for a dynamic problem and it was only after realising I had to utilise methods like loadData to fetch and update tasks did I begin to correcly implement my code. The most challenging code to make included a dynamic layout for days in each month, real time updates for tasks and implementing interactive elements. 
 
